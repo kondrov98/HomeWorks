@@ -1,366 +1,263 @@
 #include <iostream>
 #include <random>
+#include <cmath>
+#include <ctime>
 
-enum class CellState {
-    Empty, X, O
+enum tic_tac_toe_field : uint8_t
+{
+	X = 88, O = 79, N = 32  		//Крестик, нолик или пустая клетка
 };
 
-enum class Sign {
-    X, O
+
+struct Game_System 			//Операторы системы
+{
+	std::string player_1;   	//Имя игрока 1
+	std::string player_2;  	//Имя игрока 2
+	bool party;				//
+	int x;		    	 	//Координата x
+	int y;		     	 	//Координата y
+	tic_tac_toe_field field[3][3] = { {N,N,N},
+									  {N,N,N},
+									  {N,N,N} };	//Поле "крестики нолики"
+	bool X_O;				// Метка крестик или нолик
+	int Type_m;	  		//Ответ системе
+	bool E_G;			//Конец партии
 };
 
-struct GameField {
-    CellState cells[9];
+struct Game_Player 			//Операторы пользователя
+{
+	char Input;			// Ввод игрока
+	bool for_whom[2];
 };
 
-struct GameData {
-    GameField field;
-    Sign player_sign;
-};
 
-struct TurnOutcome {
-    bool isOver : 1;
-    Sign victor : 1;
-    bool isDraw : 1;
-};
+void Difficulty_of_the_game()		//Функция настройки сложность игры
+{
+	std::cout << "Not implemented!\n\n";
+}
 
-struct Game_System 			//РћРїРµСЂР°С‚РѕСЂС‹ СЃРёСЃС‚РµРјС‹
+void Computer()		//Функция игры с компьютером
+{
+	std::cout << "Not implemented!\n\n";
+}
+
+bool is_someone_won(tic_tac_toe_field field[3][3], int i, int j)
+{
+	if (field[i][j] == N)
 	{
-	 std::string player_1;   	//РРјСЏ РёРіСЂРѕРєР° 1
-	 std::string player_2;  	//РРјСЏ РёРіСЂРѕРєР° 2
-	 int x;		    	 	//РљРѕРѕСЂРґРёРЅР°С‚Р° x
-	 int y;		     	 	//РљРѕРѕСЂРґРёРЅР°С‚Р° y
-	 int Type_m;	  		//РћС‚РІРµС‚ СЃРёСЃС‚РµРјРµ
-	 bool party;
-	 bool E_G;			//РљРѕРЅРµС† РїР°СЂС‚РёРё
-	}System;
-
-struct Game_Player 			//РћРїРµСЂР°С‚РѕСЂС‹ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
-	{
-	 Sign motion;      // РџРѕР»Рµ "РєСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё" СЃРѕ СЃС‚РѕСЂРѕРЅС‹ РёРіСЂРѕРєР°
-	 char Input;			// Р’РІРѕРґ РёРіСЂРѕРєР°
-	}Player;
-
-void Rand_Party(bool& party)	//Р¤СѓРЅРєС†РёСЏ РІС‹Р±РѕСЂР° СЃС‚РѕСЂРѕРЅС‹
-	{
-	 party=rand()%2;
+		return false;
 	}
-
-void Start_System_Game(char& message)   //Р¤СѓРЅРєС†РёРё РЅР°С‡Р°Р»Р°
+	if (i == 1 && j == 1)
 	{
-	 std::cout<<"\nWelcome to the Tic-tac-toe game\n\n";
-	 std::cout<<"1) Playing with a computer. \n";
-	 std::cout<<"2) Two players. \n";
-	 std::cout<<"3) Computer Difficulty Settings. \n";
-	 std::cout<<"4) Exit the game.\n\n";
-	 while(true)
+		if ((field[i][j] == field[i - 1][j - 1] && field[i][j] == field[i + 1][j + 1]))//диагональ слева сверху вправо снизу
 		{
-		 std::cout<<"Enter the item number and press Enter\n\n";
-   		 std::cin>>message;
-		 if(message == '1'||message == '2'||message == '3'||message == '4')
-			{
-			 break;
-			}
+			return true;
+		}
+		if ((field[i][j] == field[i + 1][j - 1] && field[i][j] == field[i - 1][j + 1]))//диагональ справа сверху влево снизу
+		{
+			return true;
+		}
+	}
+	if (j == 1 && (field[i][j] == field[i][j - 1] && field[i][j] == field[i][j + 1]))//горизонталь
+	{
+		return true;
+	}
+	if (i == 1 && (field[i][j] == field[i - 1][j] && field[i][j] == field[i + 1][j]))//вертикаль
+	{
+		return true;
+	}
+	return false;
+}
+
+void Rand_Party(bool& party)	//Функция выбора стороны
+{
+	srand(time(NULL));
+	party = abs((rand() / 2) % 2);
+}
+
+
+void Stroke_function(int& x, int& y)// ввести ячейку
+{
+	bool r = 0;
+	while (true)
+	{
+		std::cout << "Enter the field row first, then the column. All these actions are accompanied by the Enter key.\n";
+		std::cin >> y;
+		std::cin >> x;
+		r = (x >= 1 && x <= 3 && y >= 1 && y <= 3) ? 0 : 1;
+		if (r == 1)
+		{
+			std::cout << "Invalid values. Enter it again.\n";
+		}
 		else
-			{		 
-			 std::cout<<"Invalid response.\n";
-			}
+		{
+			break;
 		}
-	   
 	}
-
-
-
-bool isValidCell(size_t row, size_t column) {
-    return row >= 0 && row < 3 && column >= 0 && column < 3;
 }
 
-CellState getCell(const GameField& field, size_t row, size_t column) {
-    if (!isValidCell(row, column)) return CellState::Empty;
-    return field.cells[column * 3 + row];
-}
-
-bool isCellEmpty(const GameField& field, size_t row, size_t column) {
-    return getCell(field, row, column) == CellState::Empty;
-}
-
-void putSign(GameField& field, Sign sign, size_t row, size_t column) {
-    if (isValidCell(row, column)) {
-        field.cells[column * 3 + row] = (sign == Sign::X) ? CellState::X : CellState::O;
-    }
-}
-
-bool askQuestion(char positive, char negative) {
-    char sign{};
-    std::cin >> sign;
-    sign = tolower(sign);
-
-    while (sign != positive && sign != negative) {
-        std::cout << "Wrong input: received '" << sign << "', should be one of " << positive << " or " << negative << "\n";
-        std::cin >> sign;
-        sign = tolower(sign);
-    }
-    return sign == positive;
-}
-
-Sign queryPlayerSign() {
-    std::cout << "Please input wheter you're X or O: ";
-    bool isX = askQuestion('x', 'o');
-    return isX ? Sign::X : Sign::O;
-}
-
-TurnOutcome checkTurnOutcome(const GameField& field);
-
-void processAiTurn(GameField& field, Sign ai_sign) {
-    size_t empty_cells[9]{};
-    const size_t kInvalidCellIdx = 42;
-    std::fill_n(empty_cells, 9, kInvalidCellIdx);
-    size_t last_empty_cell_idx = 0;
-    for (size_t i = 0; i < 9; i++) {
-        if (field.cells[i] == CellState::Empty) {
-            empty_cells[last_empty_cell_idx] = i;
-            last_empty_cell_idx++;
-        }
-    }
-
-    static std::random_device rd;
-    static std::mt19937 mt(rd());
-    std::uniform_int_distribution<size_t> dist(0, last_empty_cell_idx - 1);
-
-    for (size_t i = 0; i < last_empty_cell_idx; i++) {
-        size_t target = empty_cells[i];
-        field.cells[target] = ai_sign == Sign::X ? CellState::X : CellState::O;
-        auto outcome = checkTurnOutcome(field);
-        if (outcome.isOver) {
-            return;
-        }
-        field.cells[target] = CellState::Empty;
-
-        auto opposite_sign = ai_sign == Sign::X ? Sign::O : Sign::X;
-        field.cells[target] = opposite_sign == Sign::X ? CellState::X : CellState::O;
-        outcome = checkTurnOutcome(field);
-        if (outcome.isOver) {
-            field.cells[target] = ai_sign == Sign::X ? CellState::X : CellState::O;
-            return;
-        }
-        field.cells[target] = CellState::Empty;
-    }
-    size_t target = empty_cells[dist(mt)];
-    putSign(field, ai_sign, target / 3, target % 3);
-}
-
-void processPlayerTurn(GameField& field, Sign player_sign) {
-    std::cout << "\nEnter row and column: ";
-
-    int row, column;
-    std::cin >> row >> column;
-
-    while (!isValidCell(row - 1, column - 1) || !isCellEmpty(field, row - 1, column - 1)) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Wrong input, please enter row and column of an empty cell: ";
-        std::cin >> row >> column;
-    }
-
-    putSign(field, player_sign, row - 1, column - 1);
-}
-
-void printField(const GameField& field);
-
-bool isDraw(const GameField& field) {
-    for (size_t i = 0; i < 9; i++) {
-        if (field.cells[i] != CellState::Empty) {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool checkLine(const GameField& field, size_t start_row, size_t start_column, int delta_row, int delta_column) {
-    size_t current_row = start_row;
-    size_t current_column = start_column;
-    auto first = getCell(field, start_row, start_column);
-    if (first == CellState::Empty) {
-        return false;
-    }
-    while (isValidCell(current_row, current_column)) {
-        if (getCell(field, current_row, current_column) != first) {
-            return false;
-        }
-        current_row += delta_row;
-        current_column += delta_column;
-    }
-    return true;
-}
-
-#define CHECK_LINE(start_row, start_column, delta_row, delta_column) \
-        if (checkLine(field, start_row, start_column, delta_row, delta_column)) { \
-            outcome.isOver = true; \
-            outcome.victor = getCell(field, start_row, start_column) == CellState::X ? Sign::X : Sign::O; \
-            return outcome; \
-        }
-
-
-
-TurnOutcome checkTurnOutcome(const GameField& field) {
-    TurnOutcome outcome{};
-    for (size_t row = 0; row < 3; row++) {
-        CHECK_LINE(row, 0, 0, 1)
-    }
-    for (size_t column = 0; column < 3; column++) {
-        CHECK_LINE(0, column, 1, 0)
-    }
-    CHECK_LINE(0, 0, 1, 1)
-        CHECK_LINE(0, 2, 1, -1)
-
-        if (isDraw(field)) {
-            outcome.isDraw = true;
-        }
-    return outcome;
-}
-
-#undef CHECK_LINE
-
-TurnOutcome runGameLoop(Sign player_sign) {
-    GameData game_data{};
-    TurnOutcome outcome{};
-
-    while (true) {
-        if (player_sign == Sign::X) {
-            processPlayerTurn(game_data.field, Sign::X);
-        }
-        else {
-            processAiTurn(game_data.field, Sign::X);
-        }
-
-        printField(game_data.field);
-        outcome = checkTurnOutcome(game_data.field);
-        if (outcome.isOver) {
-            return outcome;
-        }
-
-        if (player_sign == Sign::O) {
-            processPlayerTurn(game_data.field, Sign::O);
-        }
-        else {
-            processAiTurn(game_data.field, Sign::O);
-        }
-
-        printField(game_data.field);
-        outcome = checkTurnOutcome(game_data.field);
-        if (outcome.isOver) {
-            return outcome;
-        }
-    }
-}
-
-void printField(const GameField& field) {
-    std::cout << "\n#-#-#-#\n";
-    for (size_t row = 0; row < 3; row++) {
-        std::cout << "|";
-        for (size_t column = 0; column < 3; column++) {
-            switch (getCell(field, row, column))
-            {
-            case CellState::Empty:
-                std::cout << " |";
-                break;
-            case CellState::X:
-                std::cout << "X|";
-                break;
-            case CellState::O:
-                std::cout << "O|";
-                break;
-            }
-        }
-        std::cout << "\n";
-	std::cout << "#-#-#-#\n";
-    }
-}
-
-bool queryPlayAgain() {
-    std::cout << "Want to play again? [y or n]: ";
-    return askQuestion('y', 'n');
-}
-
-void printGameOutcome(const TurnOutcome& outcome, Sign player_sign) {
-    if (outcome.isDraw) {
-        std::cout << "It's a draw.\n";
-    }
-    else if (outcome.victor == player_sign) {
-        std::cout << "Congrats! You're winner.\n";
-    }
-    else {
-        std::cout << "No luck this time.\n";
-    }
-}
-
-void Players_Humans(std::string& p1,std::string& p2)			//Р¤СѓРЅРєС†РёСЏ РёРіСЂС‹ РґР»СЏ РёРіСЂРѕРєРѕРІ
+void Draw_a_field(tic_tac_toe_field(&field)[3][3]) //Рисовка поля
+{
+	std::cout << "\n#-#-#-#\n";
+	for (int i = 1; i <= 3; i++)
 	{
-	 std::cout<<"Enter the name of the first player and press Enter.\n";
-	 std::cin>>p1;
-	 std::cout<<"Enter the name of the second player and press Enter.\n";
-	 std::cin>>p2; 
-	 Rand_Party(System.party);
-	 if(System.party==0)
-	   	{
-		 std::cout<<"Player "<<p1<<" make your move.\n";
-		 std::cout<<"Enter the coordinates of the cell.\n";
-		}
-	else
+		std::cout << "|";
+		for (int j = 1; j <= 3; j++)
 		{
-		 std::cout<<"Player "<<p2<<" make your move.\n";
-		 std::cout<<"Enter the coordinates of the cell.\n";
-		}
-	while(System.E_G!=1)
-		{
-	         std::cout<<"\nNot ready yet!!!\n";
-	 	 System.E_G=1;
-		}
-	 
-	}
-
-void Choice(char& message,int Type_m)    //Р¤СѓРЅРєС†РёСЏ РІС‹Р±РѕСЂР° РґРµР№СЃС‚РІРёСЏ
-	{
-	 if(message=='1')
-		{
-		 Sign player_sign = queryPlayerSign();
-    		 bool shouldExit = false;
- 	         while (!shouldExit) {
-        		auto outcome = runGameLoop(player_sign);
-        		printGameOutcome(outcome, player_sign);
-       		 	shouldExit = !queryPlayAgain();
-				     }
-	         Start_System_Game(Player.Input);
-		}
-	else
-		{
-		 if(message=='2')
+			switch (field[i - 1][j - 1])
 			{
-			 Players_Humans(System.player_1,System.player_2);
-			 Start_System_Game(Player.Input);
+			case N:
+				std::cout << " |";
+				break;
+			case X:
+				std::cout << "X|";
+				break;
+			case O:
+				std::cout << "O|";
+				break;
 			}
+		}
+		std::cout << "\n#-#-#-#\n";
+	}
+}
+
+void End_or_continuation(bool& r, bool X_O, tic_tac_toe_field field[3][3], bool(&for_whom)[2], std::string p1, std::string p2)		//проверка на конец игры или продолжение
+{
+	for (int i = 0; i <= 2; i++)
+	{
+		for (int j = 0; j <= 2; j++)
+		{
+			if (is_someone_won(field, i, j))
+			{
+				r++;
+				std::cout << "The player " << ((for_whom[0] == X_O) ? p1 : p2) << " won.\n";
+				std::cout << "The player " << ((for_whom[0] == X_O) ? p2 : p1) << " lose.\n";
+			}
+		}
+	}
+	if (r != 1)
+	{
+		std::cout << "The player " << ((for_whom[0] != X_O) ? p1 : p2) << " , make your move.\n";
+	}
+
+}
+
+
+
+void Non_filling_conditions(bool(&for_whom)[2], std::string p1, std::string p2, bool& E_G)//Процесс игры.
+{
+	Game_System System;
+	System.X_O = 1;
+	bool r = 0;
+	while (r == 0)
+	{
+		Stroke_function(System.x, System.y);
+		if (System.field[System.y - 1][System.x - 1] != X && System.field[System.y - 1][System.x - 1] != O)
+		{
+			System.field[System.y - 1][System.x - 1] = (System.X_O == 1 ? X : O);
+			Draw_a_field(System.field);
+			End_or_continuation(r, System.X_O, System.field, for_whom, p1, p2);
+
+			System.X_O = (System.X_O == 1) ? 0 : 1;
+		}
 		else
-			{
-			 if(message=='3')
-				{
-				 std::cout<<"\nNot implemented!!!\n";
-				 Start_System_Game(Player.Input);
-				}
-			else
-				{
-				 System.Type_m=4;
-				}
-			}
+		{
+			std::cout << "Occupied cell. Enter a new cell.";
+		}
+	}
+	std::cout << "Enter Y if you want to continue playing, or N if you want to stop playing in this mode.";
+	char p;
+	std::cin >> p;
+	E_G = (p == 'y') ? 0 : 1;
+}
+
+void Start_System_Game(char& message)   //Функции начала
+{
+	std::cout << "Welcome to the Tic-tac-toe game\n\n";
+	std::cout << "1) Playing with a computer. \n";
+	std::cout << "2) Two players. \n";
+	std::cout << "3) Computer Difficulty Settings. \n";
+	std::cout << "4) Exit the game.\n\n";
+	while (true)
+	{
+		std::cout << "Enter the item number and press Enter\n\n";
+		std::cin >> message;
+		if (message == '1' || message == '2' || message == '3' || message == '4')
+		{
+			break;
+		}
+		else
+		{
+			std::cout << "Invalid response.\n";
 		}
 	}
 
-int main() {
-    Start_System_Game(Player.Input);
-    while(System.Type_m!=4)
-		{
-		 Choice(Player.Input,System.Type_m);
-		}
-	 std::cout<<"Exit from game! Thanks for game!\n\n";
-    
-    return 0;
+}
+
+
+void Players_Humans(void)			//Функция игры для игроков
+{
+	Game_System System;
+	Game_Player Who;
+	std::cout << "Enter the name of the first player and press Enter.\n";
+	std::cin >> System.player_1;
+	std::cout << "Enter the name of the second player and press Enter.\n";
+	std::cin >> System.player_2;
+	Rand_Party(System.party);
+	if (System.party == 0)
+	{
+		std::cout << "Player " << System.player_1 << ", make your move.\n";
+		std::cout << "Enter the coordinates of the cell.\n";
+		Who.for_whom[0] = 1;   //игрок 1 играет за крестик
+		Who.for_whom[1] = 0;   //игрок 2 играет за нолик
+	}
+	else
+	{
+		std::cout << "Player " << System.player_2 << ", make your move.\n";
+		std::cout << "Enter the coordinates of the cell.\n";
+		Who.for_whom[0] = 0; //игрок 1 играет за нолик
+		Who.for_whom[1] = 1; //игрок 2 играет за крестик
+	}
+	while (System.E_G != 1)
+	{
+
+		Non_filling_conditions(Who.for_whom, System.player_1, System.player_2, System.E_G);
+	}
+
+}
+
+
+
+void Choice(char& message, int& Type_m)    //Функция выбора действия
+{
+	Game_System System;
+	switch (message)
+	{
+	case '1':
+		Computer();
+		break;
+	case '2':
+		Players_Humans();
+		break;
+	case '3':
+		Difficulty_of_the_game();
+		break;
+	case '4':
+		Type_m = 4;
+	}
+}
+
+
+
+int main()
+{
+	Game_System System;
+	Game_Player Player;
+	while (System.Type_m != 4)
+	{
+		Start_System_Game(Player.Input);
+		Choice(Player.Input, System.Type_m);
+	}
+	std::cout << "Exit from game! Thanks for game!\n\n";
+	return 0;
 }
