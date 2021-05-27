@@ -67,11 +67,11 @@ void qs(int* arr, int first, int last)
 	while (i<=j);
 	if (i < last)
 	{
-		qs(*arr, i, last);
+		qs(arr, i, last);
 	}
 	if (first < j)
 	{
-		qs(*arr, first, j);
+		qs(arr, first, j);
 	}
 }
 
@@ -87,11 +87,11 @@ void Uluch_Sort(int* array, int first, int last)
 	{
 		int p = mediana(array, first, last);
 		int t = *(array+(j-i)/2);
-		*(array + (j - i) / 2) = *(array+(j-i)/2);
+		*(array + (j - i) / 2) = *(array+p);
 		*(array + p) = t;
 		printf("%i ", *(array + p));
 		printf("%i ", p);
-		qs(*array, first, last);
+		qs(array, first, last);
 	}
 }
 
