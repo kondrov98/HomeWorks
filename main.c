@@ -99,6 +99,5 @@ int main()
 {
 	int Ci = 165;
 	Perevod(Ci);
-	printf("\n");
 	return 0;
 }
