@@ -109,6 +109,6 @@ int main()
 		}
 		TreeBalance = ((branch->condition == true) ? TreeBalance++ : TreeBalance);
 	}
-	percent = TreeBalance / 10000 * 100;
+	percent = TreeBalance / 50 * 100;
 	return 0;
 }
