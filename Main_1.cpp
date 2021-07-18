@@ -44,37 +44,35 @@ class Stack
 {
 private:
 	short mass[10]={0};
-	short* m_mass = mass;
 	short Counter=0;
-	short& m_Counter = Counter;
 public:
 	void reset()
 	{
-		for (int i = 0; i < m_Counter; i++)
+		for (int i = 0; i < Counter; i++)
 		{
-			m_mass[i] = 0;
+			mass[i] = 0;
 	    }
-		m_Counter = 0;
+		Counter = 0;
 	}
 
 	bool push(short Meaning)
 	{
-		if (m_mass[0]==0)
+		if (mass[0]==0)
 		{
-			m_mass[0] = Meaning;
-			m_Counter++;
+			mass[0] = Meaning;
+			Counter++;
 			return true;
 		}
 		else
 		{
-			if (m_Counter == 10)
+			if (Counter == 10)
 			{
 				return false;
 			}
 			else
 			{	
-				m_mass[m_Counter] = Meaning;
-				m_Counter++;
+				mass[Counter] = Meaning;
+				Counter++;
 				return true;
 			}
 		}
@@ -82,21 +80,21 @@ public:
 
 	void pop()
 	{
-		if (m_Counter == 0)
+		if (Counter == 0)
 		{
 			std::cout << "Warning!!! The stack is empty!!!\n";
 		}
 		else
 		{
-			m_mass[m_Counter] = 0;
-			m_Counter--;
+			mass[Counter] = 0;
+			Counter--;
 		}
 	}
 
 	void print()
 	{
 		std::cout <<"( ";
-		for (int i = 0; i < m_Counter; i++)
+		for (int i = 0; i < Counter; i++)
 		{
 			if(mass[i]!=0)
 			std::cout << mass[i]<<" ";
