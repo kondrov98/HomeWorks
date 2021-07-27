@@ -1,4 +1,6 @@
 #include <iostream>
+#include <math.h>
+#include<utility>
 using namespace std;
 
 
@@ -167,8 +169,132 @@ public:
 //Task3
 class Fraction
 {
+private:
+    short numerator;
+    short denumenator;
+public:
+    Fraction(short f_numerator, short f_denumenator) : numerator(f_numerator), denumenator(f_denumenator)
+    {
+        if (!denumenator)
+        {
+            cout << "ERROR !!!! DENUMENATOR CANNOT BE EQUAL TO 0 !!!!\n The denominator is assigned a default value of 1.\n\n";
+            denumenator = 1;
+        }
+        short i = 2;
+        short j = 0;
+        short k = 0;
+        short sum = 1;
+        while (!(numerator % i) || !(denumenator % i) || (numerator > i) || (denumenator > i))
+        {
+            if (!(numerator % i))
+            {
+                j++;
+                numerator /= i;
+            }
+            if (!(denumenator % i))
+            {
+                k++;
+                denumenator /= i;
+            }
+            if ((numerator % i) && (denumenator % i))
+            {
+                if (k == 0 || j == 0)
+                {
+                }
+                else
+                {
+                    if (k < j)
+                        sum *= i * k;
+                    else
+                        sum *= i * j;
+                }
+                numerator *= pow(i , j);
+                denumenator *= pow(i , k);
+                j = 0;
+                k = 0;
+                i++;
+                for (int l = 2; l < i; l++)
+                {
+                    if (!(i % l))
+                    {
+                        i++;
+                        l = 2;
+                    }
+                }
+            }
+        }    
+        numerator /= sum;
+        denumenator /= sum;   
+    }
 
+
+    
+    
+    friend Fraction operator+(const Fraction& f1, const Fraction& f2);
+    friend Fraction operator-(const Fraction& f1, const Fraction& f2);
+    friend Fraction operator*(const Fraction& f1, const Fraction& f2);
+    friend Fraction operator/(const Fraction& f1, const Fraction& f2);
+    friend bool operator< (const Fraction& f1, const Fraction& f2);
+    friend bool operator>=(const Fraction& f1, const Fraction& f2);
+    friend bool operator> (const Fraction& f1, const Fraction& f2);
+    friend bool operator<= (const Fraction& f1, const Fraction& f2);
+    Fraction operator-() const
+    {
+        return Fraction(-numerator, denumenator);
+    }
+
+   
+
+
+    void printFraction()
+    {
+        cout << numerator << "/" << denumenator;
+    }
 };
+
+Fraction operator+(const Fraction& f1, const Fraction& f2)
+{
+    return Fraction(f1.numerator * f2.denumenator+ f2.numerator * f1.denumenator, f1.denumenator * f2.denumenator);
+}
+
+Fraction operator-(const Fraction& f1, const Fraction& f2)
+{
+    return Fraction(f1.numerator * f2.denumenator - f2.numerator * f1.denumenator, f1.denumenator * f2.denumenator);
+}
+
+Fraction operator*(const Fraction& f1, const Fraction& f2)
+{
+    return Fraction(f1.numerator * f2.numerator , f1.denumenator * f2.denumenator);
+}
+
+Fraction operator/(const Fraction& f1, const Fraction& f2)
+{
+    return Fraction(f1.numerator * f2.denumenator, f1.denumenator * f2.numerator);
+}
+
+
+
+
+
+bool operator< (const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denumenator < f2.numerator* f1.denumenator;
+}
+
+bool operator>=(const Fraction& f1, const Fraction& f2)
+{
+    return !(f1.numerator * f2.denumenator < f2.numerator* f1.denumenator);
+}
+
+bool operator> (const Fraction& f1, const Fraction& f2)
+{
+    return f1.numerator * f2.denumenator > f2.numerator* f1.denumenator;
+}
+
+bool operator<=(const Fraction& f1, const Fraction& f2)
+{
+    return !(f1.numerator * f2.denumenator > f2.numerator* f1.denumenator);
+}
 
 //Task3
 
@@ -207,6 +333,83 @@ class Fraction
     //Task2
     cout << "\n\n\n";
     //Task3
+    Fraction frac1(6,8);
+    Fraction frac2(1,8);
+    Fraction fracSum = frac1 + frac2;
+    fracSum.printFraction();
+    cout << "\n\n";
+    Fraction fracNoSum = frac1 - frac2;
+    fracNoSum.printFraction();
+    cout << "\n\n";
+    Fraction fracProduct = frac1 * frac2;
+    fracProduct.printFraction();
+    cout << "\n\n";
+    Fraction fracDivision = frac1 / frac2;
+    fracDivision.printFraction();
+    cout << "\n\n";
+    Fraction fracMinus = -frac1;
+    fracMinus.printFraction();
+    cout << "\n\n";
+
+    if (frac1 < frac2)
+    {
+        frac1.printFraction();
+        cout <<" < ";
+        frac2.printFraction();
+        cout << ": True.\n\n";
+    }
+    else
+    {
+        frac1.printFraction();
+        cout << " < ";
+        frac2.printFraction();
+        cout << ": False.\n\n";
+    }
+
+    if (frac1 >= frac2)
+    {
+        frac1.printFraction();
+        cout << " >= ";
+        frac2.printFraction();
+        cout << ": True.\n\n";
+    }
+    else
+    {
+        frac1.printFraction();
+        cout << " >= ";
+        frac2.printFraction();
+        cout << ": False.\n\n";
+    }
+
+    if (frac1 > frac2)
+    {
+        frac1.printFraction();
+        cout << " > ";
+        frac2.printFraction();
+        cout << ": True.\n\n";
+    }
+    else
+    {
+        frac1.printFraction();
+        cout << " > ";
+        frac2.printFraction();
+        cout << ": False.\n\n";
+    }
+
+    if (frac1 <= frac2)
+    {
+        frac1.printFraction();
+        cout << " <= ";
+        frac2.printFraction();
+        cout << ": True.\n\n";
+    }
+    else
+    {
+        frac1.printFraction();
+        cout << " <= ";
+        frac2.printFraction();
+        cout << ": False.\n\n";
+    }
 
     //Task3
     cout << "\n\n\n";
