@@ -3,6 +3,8 @@
 #include<utility>
 using namespace std;
 
+enum class  s { Hearts, Tambourin, Clubs, Peak };
+enum class m { A = 1, two, tree, four, five, six, seven, eight, nine, ten, Valet, Quin, King };
 
 //Task1
 class Figure
@@ -302,7 +304,34 @@ bool operator<=(const Fraction& f1, const Fraction& f2)
 
 
 //Task4
+class Card
+{
 
+
+private:
+    s suit;
+    m meaning;
+    bool position;
+
+public:
+    Card(s c_suit, m c_meaning, bool c_position): suit(c_suit), meaning(c_meaning), position(c_position)
+    {
+
+    }
+
+    void Flip()
+    {
+        if (position)
+            position = 0;
+        else
+            position=1;
+    }
+
+    m GetValue()
+    {
+        return meaning;
+    }
+};
 
 //Task4
 
@@ -414,52 +443,9 @@ bool operator<=(const Fraction& f1, const Fraction& f2)
     //Task3
     cout << "\n\n\n";
     //Task4
-       
+    Card cf(s::Hearts , m::A, true);
     //Task4    
         return 0;
     }
 
  
-
-
-
-
-/*
-class Animal
-{
-public:
-    Animal(const char a[]) {
-        cout << a << endl;
-    }
-};
-
-class Cat : virtual public Animal
-{
-public:
-    Cat(const char a[], const char c[]) : Animal(a)
-    {
-        cout << c << endl;
-    }
-};
-
-class Mouse : virtual public Animal
-{
-public:
-    Mouse(const char a[], const char m[]) : Animal(a)
-    {
-        cout << m << endl;
-    }
-};
-
-class Cartoon : public Cat, public Mouse
-{
-public:
-    Cartoon(const char a[], const char c[], const char m[]) :
-        Cat(a, c), Mouse(a, m), Animal(a)
-    { }
-};
-
-int main() {
-    Cartoon animal("animal", "cat", "mouse");
-}
-*/
