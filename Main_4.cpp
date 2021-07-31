@@ -180,25 +180,55 @@ public:
 //--------------------------------------------------------------------------------------------------------Task2
 int Algoritm(std::vector<int>& array)
 {
-    int elem=0;
-    std::vector<int> array2;
-    for (int j = 0; j < array.size(); j++)
-    {
-        for (int i = 1; i < array.size(); i++)
+    //[1 6 6 9 4 2 3 4 6]
+    //[1 6 6 9 4 2 3 4 6]
+    //[1 6 6 9 4 2 3 4]
+    //[1 6 4 9 4 2 3 6]
+    //[1 6 4 9 4 2 3]
+    //[1 4 9 4 2 3]
+    //[1 4 9 3 2 4]
+    //[1 4 9 3 2]
+    //[1 9 3 2]
+    std::vector<int> array2 = array;
+    
+    for (int j = 0; j < array2.size(); j++)
+    {       
+        bool flag=false;
+        int elem = array2[j];
+        for (int i = j+1; i < array2.size(); i++)
         {
-            if (array[j] == array[i])
+            if (elem == array2[i])
             {
-                for (int k = 0; k < array2.size(); k++)
-                {
-                    array2.push_back(array[j]);
-                }
-            }
-            else
-            {
-                elem++;
+                int k = array2.size()-1;
+                int t = array2[i];
+                array2[i] = array2[k];
+                array2[k] = t;
+                flag = true;
+                array2.pop_back();
+                i--;
             }
         }
+        if (flag)
+        {
+            int k = array2.size()-1;
+            int t = array2[j];
+            array2[j] = array2[k];
+            array2[k] = t;
+            flag = true;
+            array2.pop_back();
+            j--;
+        }
     }
-    return elem;
+    return array2.size();
 }
 //--------------------------------------------------------------------------------------------------------Task2
+
+int main()
+{
+    //Task2
+    std::vector<int> array = { 1, 6, 6, 9, 4, 2, 3, 4, 6 };
+    int chislo = Algoritm(array);
+    std::cout << "The number of different numbers: " << chislo << "\n";
+    //Task2
+}
+
