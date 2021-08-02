@@ -13,12 +13,12 @@ public:
 
     }
 
-     T& first() const
+     T first() const
     {
         return fir;
     }
 
-     T& second() const
+     T second() const
     {
         return sec;
     }
