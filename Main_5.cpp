@@ -28,8 +28,8 @@ public:
  class Pair
  {
  protected:
-     T fir;
-     F sec;
+     T& fir;
+     F& sec;
  public:
      Pair(T fir_m, F sec_m) :fir(fir_m), sec(sec_m)
      {
@@ -54,7 +54,7 @@ public:
  {
  protected:
      std::string fir;
-     F sec;
+     F& sec;
  public:
      Pair(std::string fir_m, F sec_m) :fir(fir_m), sec(sec_m)
      {
