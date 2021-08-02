@@ -36,17 +36,19 @@ public:
 
      }
 
-     T& first() const
+     T first() const
      {
          return fir;
      }
 
-     F& second() const
+     F second() const
      {
          return sec;
      }
  };
 
+
+ 
  template <typename F>
  class Pair<std::string, F>
  {
@@ -59,12 +61,12 @@ public:
 
      }
 
-     std::string& first() const
+     std::string first() const
      {
          return fir;
      }
 
-     F& second() const
+     F second() const
      {
          return sec;
      }
@@ -79,13 +81,12 @@ public:
 
  public:
      
-     StringValuePair(std::string fir_m, F sec_m) : Pair(fir_m, sec_m)
+     StringValuePair(std::string fir_m, F sec_m) : Pair<std::string, F>(fir_m, sec_m)
      {
         
      }
  };
-
-
+ 
 
 
 int main()
@@ -103,10 +104,10 @@ int main()
     const Pair<double, int> p4(3.4, 5);
     std::cout << "Pair: " << p4.first() << ' ' << p4.second() << '\n';
 
-
+    
     StringValuePair<int> svp("Amazing", 7);
     std::cout << "Pair: " << svp.first() << ' ' << svp.second() << '\n';
-
+    
 
     return 0;
 
