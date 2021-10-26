@@ -1,0 +1,2 @@
+// Была проблема связанная, с тем что некоторые функции не работали, из-за чего не успел сделать ДЗ.
+// There was a problem related to the fact that some functions did not work, which is why I did not have time to do HW.
