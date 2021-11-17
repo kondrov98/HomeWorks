@@ -13,6 +13,7 @@ void arithmetic_mean(std::list<float>& l)
 		  {
 		   sum += *i;
 		   cursor++;
+		   i++;
 		  }
 	l.push_back(sum/cursor);
 	}
@@ -79,3 +80,28 @@ public:
 		delete[] ptr;
 	}
 };
+
+
+
+int main()
+{
+	//1
+	std::list<float> l { 1,2,3,4,5 };
+	std::list<float>::iterator i;
+	arithmetic_mean(l);
+	i = l.begin();
+	while (i != l.end())
+	{
+		std::cout << *i << " ";
+		i++;
+	}
+	//1
+	//2
+	matrics_3x3 matr({ 1,2,3 },
+					 { 4,5,14 },
+					 { 7,8,9 });
+
+
+	std::cout <<"\n\n\n\nDeterminant = " << matr.matrix_determinant() << ";";
+	//2
+}
