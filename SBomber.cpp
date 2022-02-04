@@ -224,18 +224,9 @@ Ground* SBomber::FindGround() const
 
 vector<Bomb*> SBomber::FindAllBombs() const
 {
+    BombIterator* it(vecDynamicObj);
     vector<Bomb*> vecBombs;
-
-    for (size_t i = 0; i < vecDynamicObj.size(); i++)
-    {
-        Bomb* pBomb = dynamic_cast<Bomb*>(vecDynamicObj[i]);
-        if (pBomb != nullptr)
-        {
-            vecBombs.push_back(pBomb);
-        }
-    }
-
-    return vecBombs;
+    return it->finding_the_right_iterators(it->begin(), it->end());
 }
 
 Plane* SBomber::FindPlane() const
@@ -366,3 +357,5 @@ void SBomber::DropBomb()
         score -= Bomb::BombCost;
     }
 }
+
+
