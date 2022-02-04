@@ -52,30 +52,65 @@ private:
     int16_t score;
 };
 
-template < typename T>
+template < typename T, typename C>
 class Iterator
 {
 private:
 
 public:
-    virtual void begin() = 0;
-    virtual void end() = 0;
+    virtual  std::vector <T>::iterator begin() = 0;
+    virtual  std::vector <T>::iterator end() = 0;
+    virtual  std::vector <C> finding_the_right_iterators(std::vector <T>::iterator begin, std::vector <T>::iterator end) = 0;
 };
 
-template < typename T>
-class BombIterator: public Iterator<T>
+class BombIterator: public Iterator<DynamicObject*, Bomb*>
 {
 private:
-    T current;
-    vector <Bomb*>& ArrBomb;
-
+    std::vector < DynamicObject*> DyO;
+    std::vector < DynamicObject*>::iterator DyOIt;
+    std::vector < Bomb*> Bombs;
 public:
-    virtual void begin()
+    BombIterator(std::vector <DynamicObject*> DynOb) : DyO(DynOb)
     {
 
     }
-    virtual void end()
-    {
 
+    virtual  std::vector < DynamicObject*>::iterator begin()
+    {
+        DyOIt = DyO.begin();
+        while (dynamic_cast<Bomb*>(*DyOIt) == nullptr)
+        {
+            DyOIt++;
+        }
+        return DyOIt;
+    }
+    
+    virtual  std::vector < DynamicObject*>::iterator end()
+    {
+        DyOIt = DyO.end();
+        while (dynamic_cast<Bomb*>(*DyOIt) == nullptr)
+        {
+            DyOIt--;
+        }
+        return DyOIt;
+    }
+
+
+    virtual   std::vector < Bomb*> finding_the_right_iterators(std::vector < DynamicObject*>::iterator begin, std::vector < DynamicObject*>::iterator end)
+    {
+        while (begin != end)
+        {
+            Bomb* pBomb = dynamic_cast<Bomb*>(*begin);
+            if ( pBomb != nullptr)
+            {
+                Bombs.push_back(pBomb);
+            }
+            begin++;
+        }
+        return Bombs;
     }
 };
+
+
+
+
