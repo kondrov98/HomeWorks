@@ -7,7 +7,6 @@
 #include "Bomb.h"
 #include "Ground.h"
 #include "Tank.h"
-#include "Commander.h"
 
 class SBomber
 {
