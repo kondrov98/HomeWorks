@@ -7,6 +7,7 @@
 #include "Bomb.h"
 #include "Ground.h"
 #include "Tank.h"
+#include "Commander.h"
 
 class SBomber
 {
@@ -29,10 +30,10 @@ private:
 
     void CheckPlaneAndLevelGUI();
     void CheckBombsAndGround();
-    void __fastcall CheckDestoyableObjects(Bomb* pBomb);
+    void CheckDestoyableObjects(Bomb* pBomb);
 
-    void __fastcall DeleteDynamicObj(DynamicObject * pBomb);
-    void __fastcall DeleteStaticObj(GameObject* pObj);
+    void DeleteDynamicObj(DynamicObject * pBomb);
+    void DeleteStaticObj(GameObject* pObj);
 
     Ground * FindGround() const;
     Plane * FindPlane() const;
@@ -58,59 +59,59 @@ class Iterator
 private:
 
 public:
-    virtual  std::vector <T>::iterator begin() = 0;
-    virtual  std::vector <T>::iterator end() = 0;
-    virtual  std::vector <C> finding_the_right_iterators(std::vector <T>::iterator begin, std::vector <T>::iterator end) = 0;
+    virtual  T begin() = 0;
+    virtual  T end() = 0;
+    virtual  C finding_the_right_iterators() = 0;
 };
 
-class BombIterator: public Iterator<DynamicObject*, Bomb*>
+class BombIterator: public Iterator<std::vector < DynamicObject*>::iterator, std::vector < Bomb*>>
 {
 private:
-    std::vector < DynamicObject*> DyO;
-    std::vector < DynamicObject*>::iterator DyOIt;
-    std::vector < Bomb*> Bombs;
+    std::vector < DynamicObject*> vecDynamicObj;
+    std::vector < DynamicObject*>::iterator vecDynamicObject_Iterator;
+    std::vector < Bomb*> vecBombs;
 public:
-    BombIterator(std::vector <DynamicObject*> DynOb) : DyO(DynOb)
+    BombIterator(std::vector <DynamicObject*> vecDynamicObj) : vecDynamicObj(vecDynamicObj)
     {
-
+     
     }
 
     virtual  std::vector < DynamicObject*>::iterator begin()
     {
-        DyOIt = DyO.begin();
-        while (dynamic_cast<Bomb*>(*DyOIt) == nullptr)
+        vecDynamicObject_Iterator = vecDynamicObj.begin();
+        while (dynamic_cast<Bomb*>(*vecDynamicObject_Iterator) == nullptr && vecDynamicObject_Iterator != vecDynamicObj.end()-1)
         {
-            DyOIt++;
+            vecDynamicObject_Iterator+=1;
         }
-        return DyOIt;
+        return vecDynamicObject_Iterator;
     }
     
     virtual  std::vector < DynamicObject*>::iterator end()
     {
-        DyOIt = DyO.end();
-        while (dynamic_cast<Bomb*>(*DyOIt) == nullptr)
+        vecDynamicObject_Iterator = vecDynamicObj.end()-1;
+        while (dynamic_cast<Bomb*>(*vecDynamicObject_Iterator) == nullptr && vecDynamicObject_Iterator!=vecDynamicObj.begin())
         {
-            DyOIt--;
+            vecDynamicObject_Iterator-=1;
         }
-        return DyOIt;
+
+        return vecDynamicObject_Iterator+1;
     }
 
 
-    virtual   std::vector < Bomb*> finding_the_right_iterators(std::vector < DynamicObject*>::iterator begin, std::vector < DynamicObject*>::iterator end)
+    virtual   std::vector < Bomb*> finding_the_right_iterators()
     {
+        std::vector < DynamicObject*>::iterator begin = this->begin();
+        std::vector < DynamicObject*>::iterator end = this->end();
         while (begin != end)
         {
             Bomb* pBomb = dynamic_cast<Bomb*>(*begin);
             if ( pBomb != nullptr)
             {
-                Bombs.push_back(pBomb);
+                vecBombs.push_back(pBomb);
             }
-            begin++;
+            begin+=1;
         }
-        return Bombs;
+
+        return vecBombs;
     }
 };
-
-
-
-

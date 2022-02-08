@@ -223,10 +223,9 @@ Ground* SBomber::FindGround() const
 }
 
 vector<Bomb*> SBomber::FindAllBombs() const
-{
-    BombIterator* it(vecDynamicObj);
-    vector<Bomb*> vecBombs;
-    return it->finding_the_right_iterators(it->begin(), it->end());
+{ 
+    BombIterator it(vecDynamicObj);
+    return it.finding_the_right_iterators();
 }
 
 Plane* SBomber::FindPlane() const
