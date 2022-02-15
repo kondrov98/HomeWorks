@@ -1,0 +1,4 @@
+﻿  House.cpp
+C:\Users\kondr\Desktop\Programming\C++\GoF\Bomb\SBomberProject\SBomberProject\House.cpp(36,15): warning C4244: инициализация: преобразование "double" в "short", возможна потеря данных
+C:\Users\kondr\Desktop\Programming\C++\GoF\Bomb\SBomberProject\SBomberProject\House.cpp(38,16): warning C4244: инициализация: преобразование "const double" в "short", возможна потеря данных
+  SBomberProject.vcxproj -> C:\Users\kondr\Desktop\Programming\C++\GoF\Bomb\SBomberProject\x64\Debug\SBomberProject.exe
