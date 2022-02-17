@@ -19,7 +19,7 @@ SBomber::SBomber()
     deltaTime(0),
     passedTime(0),
     fps(0),
-    bombsNumber(20),
+    bombsNumber(40),
     score(0),
     key(6)
 {

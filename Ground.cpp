@@ -13,6 +13,7 @@ void interfaceCrater::Draw() const
 {
     if (width == SMALL_CRATER_SIZE) // Рисование воронки в 9 символов шириной
     {
+        MyTools::ScreenSingleton::getInstance().SetColor(CC_Brown);
         ScreenSingleton::getInstance().GotoXY(x - 4, y + 1);
         cout << "==     ==";
         ScreenSingleton::getInstance().GotoXY(x - 2, y + 2);
