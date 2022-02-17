@@ -21,7 +21,7 @@ SBomber::SBomber()
     fps(0),
     bombsNumber(15),
     score(0),
-    key(6)
+    key(1)
 {
     MyTools::LoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " was invoked");
 
@@ -43,7 +43,7 @@ SBomber::SBomber()
     pGUI->SetFinishX(offset + width - 4);
     vecStaticObj.push_back(pGUI);
 
-    Ground* pGr = new Ground;
+    Ground* pGr = new CommonGround;
     const uint16_t groundY = maxY - 5;
     pGr->SetPos(offset + 1, groundY);
     pGr->SetWidth(width - 2);
