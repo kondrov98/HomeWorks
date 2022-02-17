@@ -134,7 +134,7 @@ public:
 	virtual void Construct(HouseBuilder* Builder) = 0;
 };
 
-class HouseDirectorA: public HouseDirector
+class HouseDirectorA : public HouseDirector
 {
 private:
 
@@ -146,7 +146,7 @@ public:
 
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();
 		Builder->createSmallWindow();
 		Builder->createRoof();
 	}
@@ -165,7 +165,7 @@ public:
 	}
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();
 		Builder->createSmallWindow();
 		Builder->createRoof();
 		Builder->createFence();
@@ -185,7 +185,7 @@ public:
 
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();;
 		Builder->createSmallWindow();
 		Builder->createRoof();
 		Builder->createFence();
@@ -206,7 +206,7 @@ public:
 
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();
 		Builder->createBigWindow();
 		Builder->createRoof();
 	}
@@ -224,7 +224,7 @@ public:
 
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();
 		Builder->createBigWindow();
 		Builder->createRoof();
 		Builder->createFence();
@@ -243,7 +243,7 @@ public:
 
 	void Construct(HouseBuilder* Builder)
 	{
-		Builder->createFence();
+		Builder->createWalls();
 		Builder->createBigWindow();
 		Builder->createRoof();
 		Builder->createFence();

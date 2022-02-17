@@ -21,7 +21,7 @@ SBomber::SBomber()
     fps(0),
     bombsNumber(15),
     score(0),
-    key(1)
+    key(6)
 {
     MyTools::LoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " was invoked");
 
