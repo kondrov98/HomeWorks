@@ -7,7 +7,7 @@
 #include "Bomb.h"
 #include "Ground.h"
 #include "Tank.h"
-#include "House.h"
+
 
 using namespace std;
 using namespace MyTools;
@@ -20,7 +20,8 @@ SBomber::SBomber()
     passedTime(0),
     fps(0),
     bombsNumber(15),
-    score(0)
+    score(0),
+    key(1)
 {
     MyTools::LoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " was invoked");
 
@@ -59,7 +60,32 @@ SBomber::SBomber()
     vecStaticObj.push_back(pTank);
 
     House * pHouse = new House;
-    pHouse->SetWidth(13);
+    pHouse->SetWidth(14);
+
+    switch (key)
+    {
+    case 1:
+        this->Director(new HouseDirectorA, new HouseBuilderA(pHouse));
+        break;
+    case 2:
+        this->Director(new HouseDirectorB, new HouseBuilderA(pHouse));
+        break;
+    case 3:
+        this->Director(new HouseDirectorC, new HouseBuilderA(pHouse));
+        break;
+    case 4:
+        this->Director(new HouseDirectorD, new HouseBuilderA(pHouse));
+        break;
+    case 5:
+        this->Director(new HouseDirectorE, new HouseBuilderA(pHouse));
+        break;
+    case 6:
+        this->Director(new HouseDirectorF, new HouseBuilderA(pHouse));
+        break;
+    default:
+        this->Director(new HouseDirectorA, new HouseBuilderA(pHouse));
+        break;
+    }
     pHouse->SetPos(80, groundY - 1);
     vecStaticObj.push_back(pHouse);
 
@@ -223,11 +249,9 @@ Ground* SBomber::FindGround() const
 }
 
 vector<Bomb*> SBomber::FindAllBombs() const
-{
-    
+{ 
     BombIterator it(vecDynamicObj);
-    vector<Bomb*> vecBombs;
-    return it.finding_the_right_iterators(it.begin(), it.end());
+    return it.finding_the_right_iterators();
 }
 
 Plane* SBomber::FindPlane() const
