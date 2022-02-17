@@ -19,33 +19,13 @@ class interfaceCrater :public GameObject
 private:
 
 public:
-	virtual bool  isInside(double xn) const = 0;
-
-};
-
-class Crater : public interfaceCrater
-{
-public:
-
-	bool  isInside(double xn) const;
-	
-	void Draw() const override;
-
-private:
-
-};
-
-class WinterCrater : public interfaceCrater
-{
-public:
-
 	bool  isInside(double xn) const;
 
 	void Draw() const override;
 
-private:
-
 };
+
+
 
 
 //=============================================================================================================
@@ -74,7 +54,7 @@ public:
 
 	interfaceCrater* create_a_crater() const
 	{
-		return new Crater;
+		return new interfaceCrater;
 	}
 
 	MyTools::ConsoleColor Color() const
@@ -89,12 +69,12 @@ private:
 };
 
 
-class WinterGroundWinter : public Ground
+class WinterGround : public Ground
 {
 public:
 	interfaceCrater* create_a_crater() const
 	{
-		return new WinterCrater;
+		return new interfaceCrater;
 	}
 
 	MyTools::ConsoleColor Color() const
