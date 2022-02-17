@@ -1,12 +1,13 @@
 #include <iostream>
 
-#include "MyTools.h"
+#include "Ground.h"
 
 
 using namespace std;
 using namespace MyTools;
 
 //==================================================================================================
+
 
 void Crater::Draw() const
 {
@@ -29,6 +30,7 @@ bool Crater::isInside(double xn) const
 
     return false;
 }
+
 
 //==================================================================================================
 
@@ -61,7 +63,7 @@ void Ground::Draw() const
         }
 
         ScreenSingleton::getInstance().GotoXY((double)X, y);
-        buf[bufSize-1] = '\0';
+        buf[bufSize - 1] = '\0';
         cout << buf;
 
         for (size_t i = 0; i < vecCrates.size(); i++)

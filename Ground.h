@@ -14,12 +14,13 @@ enum CraterSize
 
 //=============================================================================================================
 
-class interfaceCrater :public GameObject
+class interfaceCrater :public GameObject 
 {
 private:
 
 public:
 	virtual bool  isInside(double xn) const = 0;
+
 };
 
 class Crater : public interfaceCrater
@@ -78,7 +79,7 @@ public:
 
 	MyTools::ConsoleColor Color() const
 	{
-		return CC_Green;
+		return MyTools::CC_Green;
 	}
 
 
@@ -98,7 +99,7 @@ public:
 
 	MyTools::ConsoleColor Color() const
 	{
-		return CC_White;
+		return MyTools::CC_White;
 	}
 private:
 
