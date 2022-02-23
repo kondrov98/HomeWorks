@@ -1,0 +1,259 @@
+1) Thu Feb 24 00:34:48 2022 - SBomber::SBomber was invoked
+2) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+3) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+4) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+5) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+6) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+7) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+8) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+9) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+10) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+11) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+12) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+13) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+14) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+15) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+16) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+17) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+18) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+19) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 31
+20) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+21) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+22) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+23) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+24) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+25) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+26) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+27) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+28) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+29) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+30) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+31) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 63
+32) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+33) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+34) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+35) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+36) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+37) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+38) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+39) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+40) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+41) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+42) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+43) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+44) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+45) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+46) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+47) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+48) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+49) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 46
+50) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+51) Thu Feb 24 00:34:48 2022 - SBomber::DrawFrame was invoked
+52) Thu Feb 24 00:34:48 2022 - SBomber::MoveObjects was invoked
+53) Thu Feb 24 00:34:48 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+54) Thu Feb 24 00:34:48 2022 - SBomber::CheckObjects was invoked
+55) Thu Feb 24 00:34:48 2022 - SBomber::TimeFinish deltaTime = 47
+56) Thu Feb 24 00:34:48 2022 - SBomber::TimeStart was invoked
+57) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+58) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+59) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+60) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+61) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+62) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+63) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+64) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+65) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+66) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+67) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+68) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+69) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+70) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+71) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+72) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+73) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 31
+74) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+75) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+76) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+77) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+78) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+79) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 63
+80) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+81) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+82) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+83) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+84) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+85) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+86) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+87) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+88) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+89) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+90) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+91) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 31
+92) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+93) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+94) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+95) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+96) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+97) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 62
+98) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+99) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+100) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+101) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+102) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+103) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+104) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+105) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+106) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+107) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+108) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+109) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+110) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+111) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+112) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+113) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+114) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+115) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+116) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+117) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+118) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+119) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+120) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+121) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+122) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+123) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+124) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+125) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+126) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+127) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+128) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+129) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+130) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+131) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+132) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+133) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+134) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+135) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+136) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+137) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+138) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+139) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 62
+140) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+141) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+142) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+143) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+144) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+145) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+146) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+147) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+148) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+149) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+150) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+151) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 31
+152) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+153) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+154) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+155) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+156) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+157) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+158) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+159) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+160) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+161) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+162) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+163) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+164) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+165) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+166) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+167) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+168) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+169) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+170) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+171) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+172) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+173) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+174) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+175) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+176) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+177) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+178) Thu Feb 24 00:34:49 2022 - SBomber::MoveObjects was invoked
+179) Thu Feb 24 00:34:49 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+180) Thu Feb 24 00:34:49 2022 - SBomber::CheckObjects was invoked
+181) Thu Feb 24 00:34:49 2022 - SBomber::TimeFinish deltaTime = 47
+182) Thu Feb 24 00:34:49 2022 - SBomber::TimeStart was invoked
+183) Thu Feb 24 00:34:49 2022 - SBomber::DrawFrame was invoked
+184) Thu Feb 24 00:34:50 2022 - SBomber::MoveObjects was invoked
+185) Thu Feb 24 00:34:50 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+186) Thu Feb 24 00:34:50 2022 - SBomber::CheckObjects was invoked
+187) Thu Feb 24 00:34:50 2022 - SBomber::TimeFinish deltaTime = 31
+188) Thu Feb 24 00:34:50 2022 - SBomber::TimeStart was invoked
+189) Thu Feb 24 00:34:50 2022 - SBomber::DrawFrame was invoked
+190) Thu Feb 24 00:34:50 2022 - SBomber::MoveObjects was invoked
+191) Thu Feb 24 00:34:50 2022 - Bomb Speed = 4.000000;
+The direction of the plane on the x axis1.000000;
+The direction of the plane on the y axis0.100000;
+192) Thu Feb 24 00:34:50 2022 - SBomber::CheckObjects was invoked
+193) Thu Feb 24 00:34:50 2022 - SBomber::TimeFinish deltaTime = 47
+194) Thu Feb 24 00:34:50 2022 - SBomber::TimeStart was invoked
+195) Thu Feb 24 00:34:50 2022 - SBomber::DrawFrame was invoked
